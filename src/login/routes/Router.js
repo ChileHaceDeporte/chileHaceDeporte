@@ -12,9 +12,6 @@ export const Router = () => {
   
   if (loading) return <Loading />
   
-  // return <NavigationContainer>
-  //   <AppStack />
-  // </NavigationContainer>
   return <NavigationContainer>
     { authData ? <AppStack /> : <AuthStack />}
   </NavigationContainer>  

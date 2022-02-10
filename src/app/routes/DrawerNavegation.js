@@ -13,7 +13,7 @@ export function DrawerNavegation(props) {
         onPress={() => {props.navigation.navigate('Profile')}}
         icon={({color, size}) => <Ionicons name="person-outline" size={size} color='black' />}
         labelStyle={{fontSize: 16, color: 'black', fontWeight: 'normal'}}
-        label='Perifl'>
+        label='Mi perifl'>
         
       </DrawerItem>
 

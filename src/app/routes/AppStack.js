@@ -10,11 +10,6 @@ import { DrawerNavegation } from './DrawerNavegation'
 const Drawer = createDrawerNavigator();
 
 
-
-
-
-
-
 export default function AppStack () {
   
 

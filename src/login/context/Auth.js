@@ -29,7 +29,7 @@ const AuthProvider = ({children}) => {
           setLoading(false)
         } 
       } 
-      else setLoading(false) 
+      else setLoading(false)
 
     })
 
@@ -53,7 +53,6 @@ const AuthProvider = ({children}) => {
       }
     }
     catch (err) {
-      console.log(err.message)
       sendAlert('Correo o clave incorrecta')
       isLoading(false)
     }
@@ -69,7 +68,6 @@ const AuthProvider = ({children}) => {
       navigateSignIn()
     }
     catch (err){
-      console.log(err.message)
       sendAlert('Dirección de correo ya se encuentra en uso')
     }
     finally{ isLoading(false) }
@@ -83,7 +81,6 @@ const AuthProvider = ({children}) => {
       navigateSignIn()
     }
     catch(err){
-      console.log(err.message)
       sendAlert('Dirección de correo no encontrada')
     }
     finally{ isLoading(false) }

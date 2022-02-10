@@ -1,27 +1,52 @@
-import { View, Dimensions } from 'react-native'
-
-import { styles } from '../styles'
+import { Dimensions, TouchableOpacity, Text } from 'react-native'
+import { memo, useState } from 'react'
 import MapView from 'react-native-maps'
 
-export function Map() {
 
-  const initialRegion = {
-    latitude: -33.42953912924826,
-    longitude: -70.72455436429738,
-    latitudeDelta: 0.0522,
-    longitudeDelta: 0.0021,
-  }
-  const onPressHandler = () => console.log('marker')
-  // return <View style={styles.map}>
-  // </View>
-  return <View style={styles.mapContainer}>
-    <MapView style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height,}}
-      initialRegion={initialRegion}>
+import { getEstablecimiento } from '../base/base'
+
+
+function Map({ locations, onPress }) {
+
+  const average = name => locations.reduce((a, b) => {return a + Number(b[name])}, 0) / locations.length;
     
-    </MapView>
-  </View>
+  const region = {
+    latitude: average('Latitud') || -33.4566362382008,
+    longitude: average('Longitud') || -70.6488050373298,
+    latitudeDelta: 0.1,
+    longitudeDelta: 0.1,
+  }
+  const initialRegion = {
+    latitude: -33.4566362382008,
+    longitude: -70.6488050373298,
+    latitudeDelta: 0.2,
+    longitudeDelta: 0.2,
+  }
+
+
+
+  const onPressHandler = (id) => {
+    getEstablecimiento(id)
+      .then(res => onPress(res))
+      .catch(err => console.log(err))
+  }
+
+  const renderResult = locations.map(item => {
+    const coordinate = { latitude: Number(item.Latitud), longitude: Number(item.Longitud) }
+
+    return <MapView.Marker key={item.Id} coordinate={coordinate} onPress={() => onPressHandler(item.Id)}>
+    </MapView.Marker>
+
+  })
+
+
+  return <MapView initialRegion={initialRegion} region={region}
+    
+    style={{width: Dimensions.get('window').width, height: Dimensions.get('window').height,}}>
+    {renderResult}
+  
+  </MapView> 
+    
 }
 
-  // const coordinate = { latitude: -33.408722654722645,
-  //   longitude: -70.65303973123369,}
-    // <MapView.Marker key={"1"} coordinate={coordinate} onPress={onPressHandler}/>
+export const MemoMap = memo(Map);
