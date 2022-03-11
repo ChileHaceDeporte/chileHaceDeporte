@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "chileHaceDeporte",
-    "slug": "chileHaceDeporte",
+    "name": "chilehacedeporteTest",
+    "slug": "chilehacedeportetest",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -17,16 +17,30 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.chilehacedeporte.chilehacedeporte",
+      "buildNumber": "1.0.0"
+      // "config": {
+      //   "googleMapsApiKey": "YOUR_GOOGLE_MAP_API_KEY_HERE"
+      // }
     },
     "android": {
+      "package": "com.chilehacedeporte.chilehacedeporte",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "softwareKeyboardLayoutMode": "pan"
+      // "config": {
+      //   "googleMaps": {
+      //     "apiKey": "YOUR_GOOGLE_MAP_API_KEY_HERE"
+      //   }
+      // }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }
