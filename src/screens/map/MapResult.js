@@ -49,13 +49,13 @@ export default function MapResult({route, navigation }) {
           </TouchableOpacity>
         }
         
-        {(Web !== '') && <TouchableOpacity onPress={() => Linking.openURL(Web)} style={[styles.item, {marginBottom: 40}]}>
+        {(Web !== '') && <TouchableOpacity onPress={() => Linking.openURL(Web)} style={styles.item}>
             <Foundation name="web" size={24} color="black" style={{marginRight: 3}}/>
             <Text style={styles.txtItem}>{Web}</Text>
           </TouchableOpacity>  
         }
 
-        <Button title='Ir' onPress={openMapApp} type="outline" buttonStyle={{marginVertical: 40}}></Button>
+        <Button title='Ir' onPress={openMapApp} type="outline" buttonStyle={{marginTop: 30,}}></Button>
       </ScrollView>
     </SafeAreaView>
   );

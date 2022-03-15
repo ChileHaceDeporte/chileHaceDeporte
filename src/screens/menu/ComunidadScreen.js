@@ -51,7 +51,7 @@ export default function ComunidadScreen() {
       
       <View style={styles.card}>
         <Text style={styles.text}>
-          Busca la comunidad deportiva para unirte según comuna.
+          Busca la comunidad deportiva para unirte según comuna
         </Text>
        </View>
 

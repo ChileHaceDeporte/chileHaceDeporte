@@ -21,7 +21,7 @@ export default function NewsListScreen() {
   useEffect(() => {
     services()
       .then(data => setNewsData(data))
-      .catch(error => alert('no noticias'))
+      .catch(error => setNewsData([]))
   }, [])
 
   const onPressHandler = item => navigate('News', {news: item})

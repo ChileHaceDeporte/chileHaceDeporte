@@ -7,22 +7,22 @@ import Header from '../../components/Header';
 
 
 async function services() {
-  let articles = await fetch('https://chilehacedeporte.cl/wp-content/uploads/appa/noticias.json');
+  let articles = await fetch('https://chilehacedeporte.cl/wp-content/uploads/appa/eventos.json');
   const result = await articles.json();
   articles = null;
   return result.articles;
 }
 
 
-export default function EventosListScreen() {
+export default function NewsListScreen() {
   const { navigate } = useNavigation();
   const [newsData, setNewsData] = useState([])
   
-  // useEffect(() => {
-  //   services()
-  //     .then(data => setNewsData(data))
-  //     .catch(error => alert('no noticias'))
-  // }, [])
+  useEffect(() => {
+    services()
+      .then(data => setNewsData(data))
+      .catch(error => setNewsData([]))
+  }, [])
 
   const onPressHandler = item => navigate('Eventos', {news: item})
 
@@ -41,8 +41,6 @@ export default function EventosListScreen() {
       </Text>
     </View>
   )
-
-
 
   return (
     <SafeAreaView style={{paddingTop: StatusBar.currentHeight, backgroundColor: 'white', flex:1}}>

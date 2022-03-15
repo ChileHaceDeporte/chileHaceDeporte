@@ -4,7 +4,7 @@ import HomeScreen from '../screens/HomeScreen';
 import MapRouter from './MapRouter';
 import MenuRouter from './MenuRouter';
 import NoticiasRouter from './NoticiasRouter';
-// import EventosRouter from './EventosRouter';
+import EventosRouter from './EventosRouter';
 // import ProfileScreen from '../screens/ProfileScreen';
 
 
@@ -49,7 +49,7 @@ export default function AppRouter() {
         <Tab.Screen name="MapRouter" component={MapRouter} options={{tabBarIcon: mapRouter }}/>
         <Tab.Screen name="MenuRouter" component={MenuRouter} options={{tabBarIcon: menu }}/>
         <Tab.Screen name="NoticiasRouter" component={NoticiasRouter} options={{tabBarIcon: news }}/>
-        {/* <Tab.Screen name="EventosRouter" component={EventosRouter} options={{tabBarIcon: event }}/> */}
+        <Tab.Screen name="EventosRouter" component={EventosRouter} options={{tabBarIcon: event }}/>
       </Tab.Navigator>
   );
 }

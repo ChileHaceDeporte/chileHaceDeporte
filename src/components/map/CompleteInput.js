@@ -11,7 +11,7 @@ import ListQueried from './ListQueried';
 import Button from './Button';
 import { AntDesign } from '@expo/vector-icons';
 
-import { getDeportes, getEstablecimientos } from '../../base/base';
+import { getDeportes, getDeportes2, getEstablecimientos, getEstablecimientos2, getEstablecimientos3} from '../../base/base';
 
 const Title = str => str.split(' ').map(w => w[0].toUpperCase() + w.substring(1).toLowerCase()).join(' ')
 
@@ -22,31 +22,31 @@ export default function CompleteInput() {
   const [focus, SetFocus] = useState({comuna: false, deporte: false})
   const [queried, setQueried] = useState([])
 
-
   const { toggeSearchBar, setLocations } = useContext(MapContext)
-  
-
  
   const OnPress = () => {
-  
-    if (value.comuna === '' || value.deporte === '') return;
-    getEstablecimientos(Title(value.comuna), Title(value.deporte))
-      .then(res => setLocations(res))
+    if (value.comuna === '' && value.deporte === '') return;
 
-    toggeSearchBar()  
+    if (value.comuna !== '' && value.deporte !== '')
+      getEstablecimientos(Title(value.comuna), Title(value.deporte)).then(res => setLocations(res))
+    if (value.comuna === '' && value.deporte !== '')
+      getEstablecimientos2(Title(value.deporte)).then(res => setLocations(res));
+    if (value.comuna !== '' && value.deporte === '')
+      getEstablecimientos3(Title(value.comuna)).then(res => setLocations(res));
+
+    toggeSearchBar()
   }
   
 
   useEffect(() => {
     if(value.comuna.length > 3 && queried.length < 1)
       getDeportes(Title(value.comuna)).then(res => setQueried(res))
-
+    else
+      getDeportes2().then(res => setQueried(res))
   },[focus.deporte])
 
   useEffect(() => { 
-  
     if(queried.length > 0 ) setQueried([]) 
-  
   }, [value.comuna])
 
 
