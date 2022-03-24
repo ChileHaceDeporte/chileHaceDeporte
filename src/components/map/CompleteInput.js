@@ -23,16 +23,18 @@ export default function CompleteInput() {
   const [queried, setQueried] = useState([])
 
   const { toggeSearchBar, setLocations } = useContext(MapContext)
- 
   const OnPress = () => {
     if (value.comuna === '' && value.deporte === '') return;
 
     if (value.comuna !== '' && value.deporte !== '')
       getEstablecimientos(Title(value.comuna), Title(value.deporte)).then(res => setLocations(res))
+    
     if (value.comuna === '' && value.deporte !== '')
       getEstablecimientos2(Title(value.deporte)).then(res => setLocations(res));
-    if (value.comuna !== '' && value.deporte === '')
-      getEstablecimientos3(Title(value.comuna)).then(res => setLocations(res));
+    
+    if (value.comuna !== '' && value.deporte === ''){
+      getEstablecimientos3(value.comuna).then(res => setLocations(res));
+    }
 
     toggeSearchBar()
   }

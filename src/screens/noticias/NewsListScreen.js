@@ -7,21 +7,19 @@ import Header from '../../components/Header';
 
 
 async function services() {
-  let articles = await fetch('https://chilehacedeporte.cl/wp-content/uploads/appa/noticias.json');
-  const result = await articles.json();
-  articles = null;
-  return result.articles;
+  let result = await fetch('https://chilehacedeporte.cl/wp-content/uploads/appa/noticias.json');
+  const {articles} = await result.json();
+  result = null;
+  return articles;
 }
 
 
 export default function NewsListScreen() {
   const { navigate } = useNavigation();
   const [newsData, setNewsData] = useState([])
-  
+
   useEffect(() => {
-    services()
-      .then(data => setNewsData(data))
-      .catch(error => setNewsData([]))
+    services().then(data => setNewsData(data)).catch(error => setNewsData([]))
   }, [])
 
   const onPressHandler = item => navigate('News', {news: item})
@@ -75,6 +73,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 17,
+    color: "#434343",
   },
   date:{
     marginTop: 4,

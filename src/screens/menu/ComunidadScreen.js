@@ -1,4 +1,4 @@
-import { Linking, Modal, StyleSheet, Text, Pressable, View, TouchableOpacity, FlatList, Dimensions } from 'react-native';
+import { Linking, Modal, StyleSheet, Text, Pressable, View, TouchableOpacity, FlatList, Dimensions,} from 'react-native';
 import { useState } from 'react';
 
 import { comunasLista } from '../../components/map/helpers/comunas';
@@ -29,6 +29,7 @@ function ModalPicker({ ChangeModalVisible, setChooseData }) {
     <Pressable onPress={ChangeModalVisible} style={{flex: 1, justifyContent: 'center'}}>
       
       <View style={styles.modalView}>
+        
         <FlatList data={Object.keys(comunasLista)} renderItem={render} keyExtractor={item => item} 
           horizontal={false}/>
       </View> 
@@ -50,6 +51,8 @@ export default function ComunidadScreen() {
     <View style={styles.centeredView}>
       
       <View style={styles.card}>
+          
+
         <Text style={styles.text}>
           Busca la comunidad deportiva para unirte según comuna
         </Text>
@@ -99,6 +102,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 17,
     fontWeight: '500',
+    color: "#434343",    
   },
 
   button:{
@@ -118,6 +122,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     flex: 1,
     marginVertical: 5,
+    // color: "#434343",  
   },
   inputContainer:{
     height: 40,
@@ -145,7 +150,8 @@ const styles = StyleSheet.create({
   text:{
     fontSize: 17,
     textAlign: 'center',
-    lineHeight: 24,    
+    lineHeight: 24,
+    color: "#434343",
   }
 
 });

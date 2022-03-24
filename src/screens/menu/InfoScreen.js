@@ -1,13 +1,17 @@
-import { Text, View, StyleSheet, ScrollView, Linking, TouchableOpacity} from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Linking, TouchableOpacity,} from 'react-native';
 import { Button } from 'react-native-elements';
 import { AntDesign } from '@expo/vector-icons';
+// import { useFonts } from 'expo-font';
 
 export default function InfoScreen() {
+  // const [loaded] = useFonts({Mulish: require('../../../assets/fonts/Mulish.ttf'),});
+  // if (!loaded) return null;
   
   return (
     <ScrollView contentContainerStyle={{backgroundColor: 'white', paddingBottom:40 }}>
 
       <View style={styles.card}>
+        
         <Text style={styles.title}>App Chile Hace Deporte</Text>
         <Text style={styles.text}>
           App CHD es una aplicación en desarrollo, que continuamente incorporará más información. En su periodo beta iniciará con la región metropolitana y sus comunas.{'\n'}Esta aplicación requiere de la participación y retroalimentación de sus usuarios para lograr su cometido, su uso es de bien público y gratuito.
@@ -55,6 +59,8 @@ const styles = StyleSheet.create({
   card: {
     marginVertical: 20,
     backgroundColor: 'whitesmoke',
+    borderColor: '#2288DC',
+
     marginHorizontal: 17,
     paddingHorizontal: 22,
     paddingVertical: 26,
@@ -64,10 +70,12 @@ const styles = StyleSheet.create({
     fontSize: 17,
     textAlign: 'center',
     lineHeight: 24,
+    color: "#434343",
     
   },
   title: {
-    fontSize: 25,
+    fontSize: 22,
+    color: 'black',
     fontWeight: 'bold',
     marginVertical: 15,
     textAlign: 'center',

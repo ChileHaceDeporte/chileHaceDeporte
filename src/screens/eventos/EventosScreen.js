@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
   txtItem:{
     fontSize:17,
     lineHeight: 22,
+    color: "#434343",
   },
   source:{
     marginVertical: 20,

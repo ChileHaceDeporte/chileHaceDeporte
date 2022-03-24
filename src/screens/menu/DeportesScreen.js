@@ -19,7 +19,8 @@ export default function DeportesScreen() {
 
 const styles = StyleSheet.create({
   container:{
-    flex:1, justifyContent: 'center',
+    flex:1, 
+    justifyContent: 'space-around',
     marginHorizontal: 17,
     paddingBottom: 20,
   },
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
   text:{
     fontSize: 17,
     textAlign: 'center',
-    lineHeight: 24,    
+    lineHeight: 24,
+    color: "#434343",  
   }
 });

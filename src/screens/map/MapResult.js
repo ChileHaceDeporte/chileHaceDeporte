@@ -11,11 +11,10 @@ export default function MapResult({route, navigation }) {
   const { Comuna, Deporte, Direccion, Establecimiento, Latitud, Longitud, Link, Tel, Correo, Web } = route.params.location
 
   const openMapApp = () => {
-
     const latLng = `${Number(Latitud)},${Number(Longitud)}`
-    const url = Platform.select({
-      ios: `maps:0,0?q=${Establecimiento}@${latLng}`, android: `geo:0,0?q=${latLng}(${Establecimiento})`      
-    })
+    const url = Platform.select({ios: `maps:0,0?q=${Establecimiento}@${latLng}`,
+      android: `geo:0,0?q=${latLng}(${Establecimiento})`})
+    
     Linking.openURL(url);
   }
   
@@ -33,29 +32,29 @@ export default function MapResult({route, navigation }) {
         <Text style={styles.txtSub}>{Deporte}</Text>
 
         <TouchableOpacity style={styles.item} onPress={openMapApp}>
-          <Ionicons name="location-sharp" size={24} color="black"/>
+          <Ionicons name="location-sharp" size={24} color="#434343"/>
           <Text style={styles.txtItem}>{Direccion}, {Comuna}</Text>
         </TouchableOpacity>
 
         {(Tel !== '') && <TouchableOpacity onPress={() => Linking.openURL(`tel:${Tel}`)} style={styles.item}>
-              <Ionicons name="call" size={22} color="black"/>
+              <Ionicons name="call" size={22} color="#434343"/>
               <Text style={styles.txtItem}>{Tel}</Text>
             </TouchableOpacity>
         }
 
         {(Correo !== '') && <TouchableOpacity onPress={() => Linking.openURL(`mailto:${Correo}`)} style={styles.item}>
-            <Ionicons name="mail" size={22} color="black"/>
+            <Ionicons name="mail" size={22} color="#434343"/>
             <Text style={styles.txtItem}>{Correo}</Text>
           </TouchableOpacity>
         }
         
         {(Web !== '') && <TouchableOpacity onPress={() => Linking.openURL(Web)} style={styles.item}>
-            <Foundation name="web" size={24} color="black" style={{marginRight: 3}}/>
+            <Foundation name="web" size={24} color="#434343" style={{marginRight: 3}}/>
             <Text style={styles.txtItem}>{Web}</Text>
           </TouchableOpacity>  
         }
 
-        <Button title='Ir' onPress={openMapApp} type="outline" buttonStyle={{marginTop: 30,}}></Button>
+        <Button title='Ir' onPress={openMapApp} type="outline" buttonStyle={{marginTop: 30, marginBottom:1}}></Button>
       </ScrollView>
     </SafeAreaView>
   );
@@ -76,12 +75,14 @@ const styles = StyleSheet.create({
     // resizeMode:'repeat',
   },  
   title: {
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: 'bold',
+    
   },
   txtSub:{
     fontSize:17,
     marginBottom:30,
+    color: "#434343",
   },
   item:{
     flexDirection: 'row',
@@ -93,5 +94,6 @@ const styles = StyleSheet.create({
     marginRight: 15,
     paddingHorizontal: 10,
     lineHeight: 22,
+    color: "#434343",
   },
 })

@@ -1,9 +1,9 @@
-export const comunas = ['Alhue', 'Buin', 'Calera De Tango', 'Cerrillos', 'Cerro Navia', 'Colina', 
-'Conchalí', 'El Bosque', 'Estacion Central', 'Huechuraba', 'Independencia', 'Isla De Maipo', 
-'La Cisterna', 'La Florida', 'La Granja', 'La Pintana', 'La Reina', 'Lampa', 'Las Condes', 
-'Lo Barnechea', 'Lo Prado', 'Macul', 'Maipu', 'Ñuñoa', 'Pirque', 'Providencia', 'Pudahuel', 
-'Puente Alto', 'Recoleta', 'San Bernardo', 'San Joaquín', 'San Miguel', 'San Ramón', 'Santiago',
-'Talagante', 'Til Til', 'Vitacura']
+export const comunas = ['Alhue', 'Buin', 'Calera De Tango', 'Cerrillos', 'Cerro Navia', 'Colina',
+'Conchalí', 'El Bosque', 'San Bernardo', 'Estacion Central', 'Huechuraba', 'Independencia', 'Isla De Maipo',
+'La Cisterna', 'La Florida', 'La Granja', 'La Pintana', 'Lampa', 'Las Condes', 'Lo Prado', 'Macul', 'Ñuñoa',
+'Pirque', 'Providencia', 'Pudahuel', 'Recoleta', 'La Reina', 'San Joaquín', 'San Miguel', 'San Ramón',
+'Talagante', 'Til Til', 'Peñalolen', 'Lo Barnechea', 'Vitacura', 'Maipu', 'Quilicura', 'Quinta Normal',
+'Santiago', 'Puente Alto']
 
 export const comunasLista = {
   "Alhué": "https://chat.whatsapp.com/EuAqhxeJfvs8hfLcJGWbFo",

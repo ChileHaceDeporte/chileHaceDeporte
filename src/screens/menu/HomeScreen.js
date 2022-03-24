@@ -6,8 +6,8 @@ import Constants from 'expo-constants';
 import { Feather } from '@expo/vector-icons';
 
 import { signOut } from "firebase/auth";
-import { auth } from '../base/firebase';
-import AuthContext from '../contexts/AuthContext';
+import { auth } from '../../base/firebase';
+import AuthContext from '../../contexts/AuthContext';
 
 export default function HomeScreen() {
   
@@ -19,8 +19,7 @@ export default function HomeScreen() {
 
 
   return (
-    <ScrollView contentContainerStyle={{flex:1, justifyContent: 'center', backgroundColor: 'white'}}>
-      
+    <ScrollView contentContainerStyle={{flex:1, backgroundColor: 'white', justifyContent: 'center'}}>
       <TouchableOpacity onPress={handleLogOut} style={styles.logOut}>
         <Feather name="log-out" size={24} color="gainsboro"/>
       </TouchableOpacity>
@@ -33,7 +32,6 @@ export default function HomeScreen() {
           {'Bienvenido a la APP Chile Hace Deporte, podrás conocer los distintos lugares para practicar deporte y su comunidad.\n Te invitamos 😄'}
         </Text>
       </View>
-
     </ScrollView>
   );
 }
@@ -50,6 +48,7 @@ const styles = StyleSheet.create({
     width: '75%',
     alignSelf: 'center',
     aspectRatio: 244 /300,
+
   },
   card: {
     marginVertical: 20,
@@ -63,15 +62,6 @@ const styles = StyleSheet.create({
     fontSize: 17,
     textAlign: 'center',
     lineHeight: 24,
-    // color:'#434343'
-    
+    color: "#434343",
   },
-  title: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    marginVertical: 15,
-    textAlign: 'center',
-  },
-
-
 })
