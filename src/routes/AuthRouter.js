@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import SignInScreen from '../screens/auth/SignInScreen';
 import SignUpScreen from '../screens/auth/SignUpScreen';
+import SignOutScreen from '../screens/auth/SignOutScreen';
 import ResetScreen from '../screens/auth/ResetScreen';
 import Loading from '../components/Loading';
 
@@ -50,6 +51,7 @@ export default function AuthRouter() {
               <Stack.Screen name="SignInScreen" component={SignInScreen}/>
               <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
               <Stack.Screen name="ResetScreen" component={ResetScreen} />
+              <Stack.Screen name="SignOutScreen" component={SignOutScreen} />
             </>)
         }
 

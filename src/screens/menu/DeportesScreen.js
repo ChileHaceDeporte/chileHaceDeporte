@@ -12,7 +12,7 @@ export default function DeportesScreen() {
         <Text style={styles.text}>Conoce todos los deportes en nuestro sitio web</Text>
       </View>
       <Image style={styles.image} source={{uri: 'https://chilehacedeporte.cl/wp-content/uploads/2022/03/Mesa-de-trabajo-5_6-1.png'}}/>
-      <Button title="Ir" titleStyle={{ fontSize: 16 }} type="outline" onPress={() => Linking.openURL('https://chilehacedeporte.cl/deportes/')}/>
+      <Button title="Ir" titleStyle={{ fontSize: 16 }} type="outline" onPress={() => Linking.openURL('https://chilehacedeporte.cl/deportes/')}  buttonStyle={{ height: 48}}/>
     </ScrollView>
   );
 };

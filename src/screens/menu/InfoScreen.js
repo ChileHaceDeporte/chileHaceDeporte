@@ -1,11 +1,9 @@
 import { Text, View, StyleSheet, ScrollView, Linking, TouchableOpacity,} from 'react-native';
 import { Button } from 'react-native-elements';
 import { AntDesign } from '@expo/vector-icons';
-// import { useFonts } from 'expo-font';
 
 export default function InfoScreen() {
-  // const [loaded] = useFonts({Mulish: require('../../../assets/fonts/Mulish.ttf'),});
-  // if (!loaded) return null;
+
   
   return (
     <ScrollView contentContainerStyle={{backgroundColor: 'white', paddingBottom:40 }}>
@@ -45,7 +43,7 @@ export default function InfoScreen() {
 
       <View style={styles.card}>
         <Text style={styles.title}>Contacto</Text>
-        <Button title="Ir" titleStyle={{ fontSize: 16 }} type="outline" containerStyle={{marginTop: 15, marginBottom: 5}} onPress={() => Linking.openURL('https://chilehacedeporte.cl/contacto/')}/>
+        <Button title="Ir" titleStyle={{ fontSize: 16 }} type="outline" containerStyle={{marginTop: 15, marginBottom: 5}} onPress={() => Linking.openURL('https://chilehacedeporte.cl/contacto/')} buttonStyle={{ height: 48}}/>
       </View>  
 
 
@@ -66,6 +64,12 @@ const styles = StyleSheet.create({
     paddingVertical: 26,
     borderRadius: 20,
   },
+  rrss:{
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingVertical: 26,
+    paddingHorizontal: 22,
+  },
   text: {
     fontSize: 17,
     textAlign: 'center',
@@ -80,11 +84,5 @@ const styles = StyleSheet.create({
     marginVertical: 15,
     textAlign: 'center',
   },
-  rrss:{
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingVertical: 26,
-    paddingHorizontal: 22,
-  }
 
 })

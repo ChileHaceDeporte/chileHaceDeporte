@@ -41,7 +41,7 @@ export default function ResetScreen({ navigation }) {
   };
 
   return (
-    <KeyboardAwareScrollView contentContainerStyle={styles.container}> 
+    <KeyboardAwareScrollView contentContainerStyle={styles.container} style={{backgroundColor: '#48ABE3'}}> 
 
       <View style={styles.msgContainer}>
         <Text style={styles.txt}>
@@ -56,8 +56,8 @@ export default function ResetScreen({ navigation }) {
           pattern: {value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, message: 'Ingresa un correo válido'}
         }}/>
 
-      <Button title="Recupera tu clave" titleStyle={{ fontSize: 16 }} containerStyle={{marginTop: 15, marginBottom: 5}} onPress={handleSubmit(handleOnPress)} loading={loading}/>
-      <Button title="Inicia sesión" type="clear" titleStyle={{ fontSize: 17 }} containerStyle={{marginVertical: 5,}} onPress={navigateSignIn}/>
+      <Button title="Recupera tu clave" titleStyle={{ fontSize: 16, fontWeight: 'bold',}} containerStyle={{marginTop:10, marginBottom:5, borderRadius: 50,}} onPress={handleSubmit(handleOnPress)} loading={loading} buttonStyle={{ height: 49, backgroundColor: "#2D7CBF",}}/>
+      <Button title="Inicia sesión" type="clear" titleStyle={{ fontSize: 17, color: 'white' }} containerStyle={{marginVertical: 5,}} onPress={navigateSignIn} buttonStyle={{ height: 48}}/>
 
     </KeyboardAwareScrollView>
   )
@@ -75,11 +75,13 @@ export const styles = StyleSheet.create({
   msgContainer: {
     marginVertical: 5,
     backgroundColor: 'white',
-    padding: 10,
-    borderRadius: 4,
-    marginBottom: 15
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    borderRadius: 30,
+    marginBottom: 15,
   },
   txt: {
+    // textAlign: 'center',
     fontSize: 17
   }
 })

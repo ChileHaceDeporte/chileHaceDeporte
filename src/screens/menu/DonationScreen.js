@@ -26,7 +26,7 @@ export default function DonationScreen() {
     <View style={styles.card}>
       <Text style={styles.title}>Recursos</Text>
       <Text style={styles.text}>
-        Con recursos monetarios para el funcionamiento o implementos deportivos para distribuir en los recintos deportivos que lo requieran.
+        Con recursos, ya sean monetarios o aportes de implementos deportivos para distribuir a los distintos recintos deportivos que lo requieran, además de organizar distintas actividades a lo largo del país.
       </Text>
     </View>
 
@@ -42,12 +42,12 @@ export default function DonationScreen() {
         Hace tu donación mediante
       </Text>
       <Text style={[styles.text, {fontWeight: 'bold'}]}>Flow</Text>
-      <Button title="Donar" titleStyle={{ fontSize: 16 }} containerStyle={{marginTop: 15, marginBottom: 5}} onPress={() => Linking.openURL('https://www.flow.cl/app/web/pagarBtnPago.php?token=uydwrel')}/>
+      <Button title="Donar" titleStyle={{ fontSize: 16 }} containerStyle={{marginTop: 15, marginBottom: 5}} onPress={() => Linking.openURL('https://www.flow.cl/app/web/pagarBtnPago.php?token=uydwrel')} buttonStyle={{ height: 48}}/>
     </View>
     
     <View style={styles.card}>
       <Text style={styles.title}>Contacto</Text>
-      <Button title="Ir" titleStyle={{ fontSize: 16 }} type="outline" containerStyle={{marginTop: 15, marginBottom: 5}} onPress={() => Linking.openURL('https://chilehacedeporte.cl/contacto/')}/>
+      <Button title="Ir" titleStyle={{ fontSize: 16 }} type="outline" containerStyle={{marginTop: 15, marginBottom: 5}} onPress={() => Linking.openURL('https://chilehacedeporte.cl/contacto/')} buttonStyle={{ height: 48}}/>
     </View>    
 
     </ScrollView>

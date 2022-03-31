@@ -1,9 +1,11 @@
-export const comunas = ['Alhue', 'Buin', 'Calera De Tango', 'Cerrillos', 'Cerro Navia', 'Colina',
-'Conchalí', 'El Bosque', 'San Bernardo', 'Estacion Central', 'Huechuraba', 'Independencia', 'Isla De Maipo',
-'La Cisterna', 'La Florida', 'La Granja', 'La Pintana', 'Lampa', 'Las Condes', 'Lo Prado', 'Macul', 'Ñuñoa',
-'Pirque', 'Providencia', 'Pudahuel', 'Recoleta', 'La Reina', 'San Joaquín', 'San Miguel', 'San Ramón',
-'Talagante', 'Til Til', 'Peñalolen', 'Lo Barnechea', 'Vitacura', 'Maipu', 'Quilicura', 'Quinta Normal',
-'Santiago', 'Puente Alto']
+export const comunas = ['Alhue', 'Buin', 'Calera De Tango', 'Cerrillos', 'Cerro Navia',
+'Colina', 'Conchalí', 'El Bosque', 'Estacion Central', 'Huechuraba', 'Independencia', 
+'Isla De Maipo', 'La Cisterna', 'La Florida', 'La Granja', 'La Pintana', 'La Reina', 
+'Lampa', 'Las Condes', 'Lo Barnechea', 'Lo Espejo', 'Lo Prado', 'Macul', 'Maipu', 
+'Ñuñoa', 'Pedro Aguirrre Cerda', 'Peñaflor', 'Peñalolen', 'Pirque',
+'Providencia', 'Pudahuel', 'Puente Alto', 'Quilicura', 'Quinta Normal', 'Recoleta',
+'Renca', 'San Bernardo', 'San Joaquín', 'San Miguel', 'San Ramon', 'Santiago', 'Talagante',
+'Til Til', 'Vitacura']
 
 export const comunasLista = {
   "Alhué": "https://chat.whatsapp.com/EuAqhxeJfvs8hfLcJGWbFo",

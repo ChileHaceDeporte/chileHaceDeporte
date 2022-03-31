@@ -54,7 +54,7 @@ export default function MapResult({route, navigation }) {
           </TouchableOpacity>  
         }
 
-        <Button title='Ir' onPress={openMapApp} type="outline" buttonStyle={{marginTop: 30, marginBottom:1}}></Button>
+        <Button title='Ir' onPress={openMapApp} type="outline" buttonStyle={{marginTop: 35, marginBottom:1, height: 48}}></Button>
       </ScrollView>
     </SafeAreaView>
   );

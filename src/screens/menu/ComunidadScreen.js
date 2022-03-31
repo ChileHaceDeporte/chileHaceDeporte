@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   },
 
   button:{
-    height: 40,
+    height: 48,
     flexDirection: 'row',
     borderRadius: 5,
     justifyContent: 'center',
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     // color: "#434343",  
   },
   inputContainer:{
-    height: 40,
+    height: 48,
     backgroundColor: 'whitesmoke',
 
     borderRadius: 5,

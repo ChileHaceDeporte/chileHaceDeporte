@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Text, View, StyleSheet, Alert,} from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
@@ -8,12 +8,15 @@ import CustomInput from '../../components/auth/CustomInput';
 import { Button } from 'react-native-elements';
 
 import { auth } from '../../base/firebase';
-import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile, } from "firebase/auth";
+import { deleteUser, signInWithEmailAndPassword } from "firebase/auth";
 
-export default function SignUpScreen({ navigation }) {
+import AuthContext from '../../contexts/AuthContext';
+
+export default function SignOutScreen({ navigation }) {
 
   const navigateSignIn = () => navigation.navigate('SignInScreen')
-  
+
+  const { setSignedIn } = useContext(AuthContext)
 
   const [loading, setLoading] = useState(false)
   const { control, handleSubmit, watch, reset } = useForm({ mode: 'onBlur', reValidateMode:'onBlur',
@@ -21,7 +24,6 @@ export default function SignUpScreen({ navigation }) {
       // name: '',
       email: '',
       password: '',
-      repeatPassword: ''
     }
   })
   
@@ -29,26 +31,19 @@ export default function SignUpScreen({ navigation }) {
 
   const handleOnPress = ({ email, password}) => {
     setLoading(true);
-    
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(res => {
-        // updateProfile(res.user, { displayName: name })
-        //   .catch(err => console.log(err))
-        sendEmailVerification(res.user)
-          .catch(err => console.log(err))
+    signInWithEmailAndPassword(auth, email, password)
+      .then(({user}) => {
+        setSignedIn(false)
+        deleteUser(user)
+          .then(res => Alert.alert(null, 'Tu cuenta ha sido eliminada'))
+          .catch(err => Alert.alert(null, 'Se ha producido un error'))
       })
-      .then(() => {
-        Alert.alert(null, 'Te hemos enviado un vínculo para verificar tu dirección de correo electrónico. Luego podrás iniciar sesión.')
+      .catch(err => Alert.alert(null, 'Correo o clave incorrecta') )
+      .finally(() => {
+        setLoading(false) 
         navigateSignIn()
       })
-      .catch(err => {
-        Alert.alert(null, 'Dirección de correo ya se encuentra en uso')
-        reset()
-      })
-      .finally(() => setLoading(false))
-
-
   };
 
   return (
@@ -56,7 +51,7 @@ export default function SignUpScreen({ navigation }) {
 
       <View style={styles.msgContainer}>
         <Text style={styles.txt}>
-          Crea tu cuenta y te enviaremos un vínculo para verificar tu dirección de correo electrónico.
+          Para darte de baja de Chile Hace Deporte ingresa tu correo y contraseña.
         </Text>
       </View>
       
@@ -73,13 +68,8 @@ export default function SignUpScreen({ navigation }) {
           minLength: {value: 6, message: 'La contraseña debe tener almenos 6 caracteres'}
         }}/>
     
-      <CustomInput placeholder="Repite tu contraseña" name="repeatPassword" control={control} secureTextEntry={true}
-        rules={{
-          validate: value => value === watch('password') || 'Las contraseñas no coinciden'
-        }}/>
-    
-      <Button title="Crea tu cuenta" titleStyle={{ fontSize: 17, fontWeight: 'bold' }} containerStyle={{marginTop: 10, marginBottom: 5, borderRadius:50}} onPress={handleSubmit(handleOnPress)} loading={loading} buttonStyle={{ height: 48, backgroundColor: "#2D7CBF",}}/>
-      <Button title="Inicia sesión" type="clear" titleStyle={{ fontSize: 17, color: 'white' }} containerStyle={{marginVertical: 5,}} onPress={navigateSignIn} buttonStyle={{ height: 48}}/>
+      <Button title="Elimina tu cuenta" titleStyle={{ fontSize: 17, fontWeight: 'bold',}} containerStyle={{marginTop: 10, marginBottom: 5, borderRadius: 50,}} onPress={handleSubmit(handleOnPress)} loading={loading} buttonStyle={{ height: 48, backgroundColor: "#2D7CBF",}}/>
+      <Button title="Volver" type="clear" titleStyle={{ fontSize: 17, color: 'white' }} containerStyle={{marginVertical: 5,}} onPress={navigateSignIn} buttonStyle={{ height: 48}}/>
 
 
     </KeyboardAwareScrollView>

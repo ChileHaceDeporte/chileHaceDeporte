@@ -30,21 +30,21 @@ export default CustomInput
 
 const styles = StyleSheet.create({
   input: {
-    paddingHorizontal: 10,
-    height: 40,
+    paddingHorizontal: 20,
+    height: 48,
     fontSize: 17,
     marginVertical: 5,
     
-    borderRadius: 4,
+    borderRadius: 50,
     width: "100%",
-    backgroundColor: "#FFFFFF",
-
+    backgroundColor: "white",
   },
   warning:{
     alignSelf:"flex-start",
-    fontSize: 15,
+    fontSize: 16,
     marginHorizontal: 5,
-    marginBottom: 10
+    marginBottom: 10,
+    color: 'white'
 
     // color:"whitesmoke",
   }

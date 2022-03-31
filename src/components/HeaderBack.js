@@ -15,7 +15,8 @@ export default function HeaderBack({ title, OnPress }) {
 const styles = StyleSheet.create({
   back:{
     marginHorizontal: 17,
-    height: 44.5,
+    // height: 44.5,
+    height: 48,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',

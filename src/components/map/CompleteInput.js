@@ -106,13 +106,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   inputContainer:{
-    height: 40,
+    height: 48,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'whitesmoke',
     borderRadius: 5,
     marginVertical: 5,
-    
   },
   cancel: {
     backgroundColor: 'whitesmoke',
